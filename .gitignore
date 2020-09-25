@@ -8,6 +8,7 @@
 **/*.id*
 **/*.nam
 **/*.til
+**/*.i64
 
 # deb packages
 **/*.deb

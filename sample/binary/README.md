@@ -1,3 +1,3 @@
 # binary
-- AppStore, the one downloaded from app store
-- Memory, the one dumpped from memory
+- `appstore`, binary downloaded from app store
+- `dump`, binary dumpped from memory

@@ -1,2 +1,10 @@
+# mac files
 **/.DS_Store
+
+# theos obj files
 **/.theos
+
+# ida pro
+**/*.id*
+**/*.nam
+**/*.til

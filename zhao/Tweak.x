@@ -14,12 +14,6 @@ static BOOL enabled;
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
 	NSNumber * enabledValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled" inDomain:nsDomainString];
 	enabled = (enabledValue) ? [enabledValue boolValue] : YES;
-
-	if (enabled) {
-		vm_writeData(addOne, 0x2A0900B1);
-	} else {
-		vm_writeData(addOne, 0x2A0500B1);
-	}
 }
 
 %ctor {
@@ -35,4 +29,5 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 	// Add any personal initializations
 	addOne = vm_searchData("2A0500B1E8779F1AEA2F00F9", [Tools getBinarySize]);
     NSLog(@"Address: 0x%lx", addOne);
+	vm_writeData(addOne, "2A9D0FB1");
 }

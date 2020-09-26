@@ -1,6 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "helper/SearchKit.h"
-#import "helper/vm_writeData.h"
 #import "helper/Tools.h"
 
 @interface NSUserDefaults (Tweak_Category)
@@ -28,4 +26,5 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 									(CFStringRef)nsNotificationString, NULL, CFNotificationSuspensionBehaviorCoalesce);
 
 	// Add any personal initializations
+	[Tools search];
 }

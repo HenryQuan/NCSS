@@ -18,6 +18,12 @@ DYLIB = $(DEB_NAME)/Library/MobileSubstrate/DynamicLibraries
 PREF = $(DEB_NAME)/Library/PreferenceLoader/Preferences
 OUTPUT = .theos/obj/arm64/zhao.dylib
 
+# build debug, move to dynamic libraries and respring
+move_debug:
+	make
+	su -c "mv .theos/obj/debug/zhao.dylib /Library/MobileSubstrate/DynamicLibraries"
+	killall SpringBoard
+
 # build, package and clean
 final:
 	make DEBUG=0

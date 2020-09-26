@@ -48,6 +48,6 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
                        end, // end address found by get_region_size
                        &out, // out array found by search_data (256)
                        &results, // out result_t of found number of results (256 max)
-                       "4040094880600B1C6060054E80700F9"); // bytes to find - feedfacf (MH_MAGIC_64) in little endian (MH_CIGAM_64)
+                       "44040094880600b1c6060054"); // bytes to find - feedfacf (MH_MAGIC_64) in little endian (MH_CIGAM_64)
 	NSLog(@"The updated address is 0x%lx\n", out[0]);
 }

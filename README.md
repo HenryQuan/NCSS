@@ -1,5 +1,5 @@
 # 找 zhao
-Search for a hex string from the current process memory.
+Search a value from the virtual memory on iOS.
 
 ## Resources
 Other memory searching and writing tools I found
@@ -11,3 +11,6 @@ Other memory searching and writing tools I found
 - https://github.com/MJx0/KittyMemory
 
 Some of them only dump the memory but ultimately, they could achieve the same thing.
+
+### Extra
+[Mach IPC Interface](http://web.mit.edu/darwin/src/modules/xnu/osfmk/man/) has all you need for virtual memory.

@@ -29,8 +29,6 @@ class ViewController: UIViewController {
             pref.setValue(true, forKey: appVersion)
         }
         
-        print(Tools.getBinarySize())
-        
         // Virtual memory
         Tools.search()
     }

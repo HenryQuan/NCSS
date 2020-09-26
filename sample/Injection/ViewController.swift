@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     func showVerionAlert() {
         let pref = UserDefaults.standard
         // Get app version
-        let appVersion = Tools.getAppVersion()
+        let appVersion = Tools.getAppVersion()!
         let displayed = pref.bool(forKey: appVersion)
         // Show this only once
         if !displayed {
@@ -28,9 +28,6 @@ class ViewController: UIViewController {
             self.present(alert, animated: true)
             pref.setValue(true, forKey: appVersion)
         }
-        
-        // Virtual memory
-        Tools.search()
     }
     
     @IBAction func onTapMeButtonPressed(_ sender: Any) {

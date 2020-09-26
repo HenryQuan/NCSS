@@ -17,7 +17,7 @@
 		<key>icon</key>
 		<string>/Applications/Preferences.app/icon-table@2x.png</string>
 		<key>PostNotification</key>
-		<string>org.github.henryquan.zhao/preferences.changed</string>
+		<string>pref.changed</string>
 	</dict>
 </dict>
 </plist>

@@ -1,6 +1,6 @@
 Package: org.github.henryquan.zhao
 Name: zhao
-Version: 0.0.1
+Version: 0.0.2
 Architecture: iphoneos-arm
 Description: Memory search and injection. It should also update automatically while app updates.
 Maintainer: HenryQuan

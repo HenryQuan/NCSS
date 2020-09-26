@@ -30,6 +30,9 @@ class ViewController: UIViewController {
         }
         
         print(Tools.getBinarySize())
+        
+        // Virtual memory
+        Tools.search()
     }
     
     @IBAction func onTapMeButtonPressed(_ sender: Any) {
@@ -45,4 +48,3 @@ class ViewController: UIViewController {
         return value
     }
 }
-

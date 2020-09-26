@@ -16,9 +16,9 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 	enabled = (enabledValue) ? [enabledValue boolValue] : YES;
 
 	if (enabled) {
-		vm_writeData(address, 0x2A0900B1);
+		vm_writeData(addOne, 0x2A0900B1);
 	} else {
-		vm_writeData(address, 0x2A0500B1);
+		vm_writeData(addOne, 0x2A0500B1);
 	}
 }
 

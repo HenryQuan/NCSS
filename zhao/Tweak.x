@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "helper/SearchKit.h"
+#import "helper/vm_writeData.h"
 
 @interface NSUserDefaults (Tweak_Category)
 - (id)objectForKey:(NSString *)key inDomain:(NSString *)domain;
@@ -29,11 +30,11 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 	mach_port_t task = mach_task_self();
 
 	vm_address_t base;
-    vm_address_t end;
+	vm_address_t end;
 
-	get_region_size(task, //task obtained by task_for_pid
-                    &base, //base addr found by get_region_size (out)
-                    &end); //end addr found by get_region_size (out)
+	get_region_size(task, &base, &end);
 
-    printf("addr range: 0x%lx - 0x%lx\n", base, end);
+	NSLog(@"addr range: 0x%lx - 0x%lx\n", base, end);
+	NSLog(@"Testing logs");
+	NSLog(@"offset is 0x%llx", get_slide());
 }

@@ -19,15 +19,17 @@ class ViewController: UIViewController {
     func showVerionAlert() {
         let pref = UserDefaults.standard
         // Get app version
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        let appVersion = Tools.getAppVersion()
         let displayed = pref.bool(forKey: appVersion)
         // Show this only once
         if !displayed {
-            let alert = UIAlertController(title: "Version 1.0.1", message: "A new upgrade with some minor changes :)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Version \(appVersion)", message: "A new upgrade with some minor changes :)", preferredStyle: .alert)
             alert.addAction(.init(title: "Close", style: .default))
             self.present(alert, animated: true)
             pref.setValue(true, forKey: appVersion)
         }
+        
+        print(Tools.getBinarySize())
     }
     
     @IBAction func onTapMeButtonPressed(_ sender: Any) {

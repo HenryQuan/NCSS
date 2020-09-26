@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923C6F6B251EF4650067503F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C6F6A251EF4650067503F /* Tools.m */; };
 		92E398D2251DD48B001D9BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D1251DD48B001D9BC0 /* AppDelegate.swift */; };
 		92E398D4251DD48B001D9BC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D3251DD48B001D9BC0 /* SceneDelegate.swift */; };
 		92E398D6251DD48B001D9BC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D5251DD48B001D9BC0 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		923C6F68251EF4650067503F /* Injection-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Injection-Bridging-Header.h"; sourceTree = "<group>"; };
+		923C6F69251EF4650067503F /* Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		923C6F6A251EF4650067503F /* Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		92E398CE251DD48B001D9BC0 /* Injection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Injection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E398D1251DD48B001D9BC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E398D3251DD48B001D9BC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,9 @@
 				92E398DA251DD48C001D9BC0 /* Assets.xcassets */,
 				92E398DC251DD48C001D9BC0 /* LaunchScreen.storyboard */,
 				92E398DF251DD48C001D9BC0 /* Info.plist */,
+				923C6F69251EF4650067503F /* Tools.h */,
+				923C6F6A251EF4650067503F /* Tools.m */,
+				923C6F68251EF4650067503F /* Injection-Bridging-Header.h */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 				TargetAttributes = {
 					92E398CD251DD48B001D9BC0 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -140,6 +148,7 @@
 				92E398D6251DD48B001D9BC0 /* ViewController.swift in Sources */,
 				92E398D2251DD48B001D9BC0 /* AppDelegate.swift in Sources */,
 				92E398D4251DD48B001D9BC0 /* SceneDelegate.swift in Sources */,
+				923C6F6B251EF4650067503F /* Tools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4YSG3SYMLE;
 				INFOPLIST_FILE = Injection/Info.plist;
@@ -296,6 +306,8 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.github.henryquan.Injection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Injection/Injection-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,6 +318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4YSG3SYMLE;
 				INFOPLIST_FILE = Injection/Info.plist;
@@ -316,6 +329,7 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.github.henryquan.Injection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Injection/Injection-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

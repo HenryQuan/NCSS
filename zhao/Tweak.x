@@ -26,11 +26,10 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 									(CFStringRef)nsNotificationString, NULL, CFNotificationSuspensionBehaviorCoalesce);
 
 	// Add any personal initializations
-	mach_port_t port = mach_task_self();
+	mach_port_t task = mach_task_self();
 
 	vm_address_t base;
     vm_address_t end;
-    vm_address_t out[SEARCH_MAX]; //256 by default
 
 	get_region_size(task, //task obtained by task_for_pid
                     &base, //base addr found by get_region_size (out)

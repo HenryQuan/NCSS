@@ -3,6 +3,7 @@
 
 # theos obj files
 **/.theos
+**/*.dylib
 
 # ida pro
 **/*.id*

@@ -31,10 +31,23 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 
 	vm_address_t base;
 	vm_address_t end;
+	vm_address_t *out;
+
+    result_t results;
 
 	get_region_size(task, &base, &end);
 
 	NSLog(@"addr range: 0x%lx - 0x%lx\n", base, end);
-	NSLog(@"Testing logs");
 	NSLog(@"offset is 0x%llx", get_slide());
+
+	// Search for a string
+	search_data(task, // task obtained by task_for_pid
+                       false, // isString = false - we're not searching for a string (feedfacf)
+                       true, // quitOnFirstResult = false - look for SEARCH_MAX (256 default) results
+                       base, // base address found by get_region_size
+                       end, // end address found by get_region_size
+                       &out, // out array found by search_data (256)
+                       &results, // out result_t of found number of results (256 max)
+                       "4040094880600B1C6060054E80700F9"); // bytes to find - feedfacf (MH_MAGIC_64) in little endian (MH_CIGAM_64)
+	NSLog(@"The updated address is 0x%lx\n", out[0]);
 }

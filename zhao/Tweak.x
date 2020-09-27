@@ -5,8 +5,7 @@ BOOL score;
 
 static void reloadPrefs() {
 	NSLog(@"Notification received");
-	[[NSUserDefaults standardUserDefaults] synchronize];
-	NSDictionary *pref = [[NSUserDefaults standardUserDefaults] persistentDomainForName:@PREF_DOMAIN];
+	NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
 	NSLog(@"Pref: %@", [pref description]);
 	score = [[pref objectForKey:@"score"] ?: @(NO) boolValue];
 	NSLog(@"Score: %d", score);

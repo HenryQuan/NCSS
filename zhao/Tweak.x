@@ -1,12 +1,14 @@
 #import "helper.h"
 
-#define APP_ID @"henryquan.zhao"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/henryquan.zhao.plist"
+#define APP_ID "org.github.henryquan.zhao"
 static NSString *updateIdentifier = @"zhao.updated";
 static vm_address_t addOne = 0;
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-	CFPreferencesAppSynchronize(CFSTR(APP_ID));
-	BOOL score = CFPreferencesCopyAppValue(CFSTR("score"), CFSTR(APP_ID));
+    CFPreferencesAppSynchronize(CFSTR(APP_ID));
+    NSMutableDictionary *pref = [NSMutableDictionary dictionaryWithContentsOfFile:PLIST_PATH];
+    BOOL score = [[pref objectForKey:@"score"] boolValue];
     NSLog(@"score is %d", score);
 	if (score) {
 		vm_writeData("2A9D0FB1", addOne);

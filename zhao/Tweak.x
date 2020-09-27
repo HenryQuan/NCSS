@@ -17,14 +17,9 @@ static void reloadPrefs() {
 	}
 }
 
-// void addListerner(NSString *identifier)
-// {
-// 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, notificationCallback, (CFStringRef)identifier, NULL, CFNotificationSuspensionBehaviorCoalesce);
-// }
-
 %ctor
 {
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)reloadPrefs, CFSTR(PREF_CHANGED), NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)reloadPrefs, CFSTR(PREF_CHANGED), NULL, CFNotificationSuspensionBehaviorCoalesce);
 	reloadPrefs();
 
 	// Find addresses and record original value

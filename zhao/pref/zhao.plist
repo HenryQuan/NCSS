@@ -21,7 +21,7 @@
 			<key>defaults</key>
 			<string>zhao</string>
 			<key>key</key>
-			<string>fall</string>
+			<string>score</string>
 			<key>label</key>
 			<string>More score</string>
 			<key>PostNotification</key>

@@ -24,7 +24,7 @@
 	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
 	[settings setObject:value forKey:specifier.properties[@"key"]];
 	[settings writeToFile:path atomically:YES];
-	CFStringRef notificationName = (CFStringRef)specifier.properties[@"PostNotification"];
+	CFStringRef notificationName = (__bridge CFStringRef)(specifier.properties[@"PostNotification"]);
 	if (notificationName) {
 		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), notificationName, NULL, NULL, YES);
 	}

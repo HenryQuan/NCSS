@@ -5,18 +5,20 @@
 static NSString * updateIdentifier = @"zhao.updated";
 static vm_address_t addOne = 0;
 
+@interface NSUserDefaults (Tweak_Category)
+- (id)objectForKey:(NSString *)key inDomain:(NSString *)domain;
+- (void)setObject:(id)value forKey:(NSString *)key inDomain:(NSString *)domain;
+@end
+
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-	NSLog(@"Notification received");
-	NSDictionary *pref = [NSDictionary dictionaryWithContentsOfFile:PLIST_PATH];
-	BOOL enabled = [[pref valueForKey:@"score"] boolValue];
-	NSLog(@"Enabled is %d", enabled);
+	NSNumber * enabledValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled" inDomain:nsDomainString];
+	BOOL enabled = (enabledValue)? [enabledValue boolValue] : YES;
 	if (enabled) {
 		vm_writeData("2A9D0FB1", addOne);
 	} else {
 		vm_writeData("2A0500B1", addOne);
 	}
 }
-
 
 void addListerner(NSString *identifier) {
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, 

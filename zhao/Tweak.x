@@ -4,7 +4,8 @@ vm_address_t addOne = 0;
 BOOL score;
 
 static void reloadPrefs() {
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 500), dispatch_get_main_queue(), ^{
+	NSLog(@"Notification received");
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1000), dispatch_get_main_queue(), ^{
 		NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
 		NSLog(@"Pref: %@", [pref description]);
 		score = [[pref objectForKey:@"score"] ?: @(NO) boolValue];

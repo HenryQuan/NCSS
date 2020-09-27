@@ -7,8 +7,6 @@
 
 #import "Injection.h"
 
-#define PLIST_PATH @"/var/mobile/Library/Preferences/org.github.henryquan.zhao.plist"
-
 @implementation Injection
 
 +(void)inject
@@ -19,7 +17,7 @@
 
 +(void)loadPref
 {
-    NSDictionary *pref = [NSDictionary dictionaryWithContentsOfFile:PLIST_PATH];
+    NSDictionary *pref = [NSDictionary dictionaryWithContentsOfFile:@PLIST_PATH];
     BOOL score = [[pref valueForKey:@"enabled"] boolValue];
     NSLog(@"Score is %d", score);
 }

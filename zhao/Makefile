@@ -16,7 +16,7 @@ DEB_NAME = package
 DEBIAN = $(DEB_NAME)/DEBIAN
 DYLIB = $(DEB_NAME)/Library/MobileSubstrate/DynamicLibraries
 PREF = $(DEB_NAME)/Library/PreferenceLoader/Preferences
-OUTPUT = .theos/obj/arm64/zhao.dylib
+OUTPUT = .theos/obj/zhao.dylib
 
 # build debug, move to dynamic libraries and respring
 move_debug:

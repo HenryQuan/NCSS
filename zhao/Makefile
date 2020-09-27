@@ -1,6 +1,5 @@
 TARGET := iphone:clang:latest:7.0
 INSTALL_TARGET_PROCESSES = SpringBoard
-DEBUG = 1
 ARCHS = arm64
 
 include $(THEOS)/makefiles/common.mk
@@ -18,22 +17,12 @@ DYLIB = $(DEB_NAME)/Library/MobileSubstrate/DynamicLibraries
 PREF = $(DEB_NAME)/Library/PreferenceLoader/Preferences
 OUTPUT = .theos/obj/zhao.dylib
 
+# bundle
+SUBPROJECTS += zhaopref
+include $(THEOS_MAKE_PATH)/aggregate.mk
+
 # build debug, move to dynamic libraries and respring
 move_debug:
 	make
 	su -c "mv .theos/obj/debug/zhao.dylib /Library/MobileSubstrate/DynamicLibraries"
 	killall SpringBoard
-
-# build, package and clean
-final:
-	make
-	rm -rf $(DEB_NAME)
-	mkdir -p $(DEBIAN)
-	mkdir -p $(DYLIB)
-	mkdir -p $(PREF)
-	cp control $(DEBIAN)
-	cp $(OUTPUT) $(DYLIB)
-	cp zhao.plist $(DYLIB)
-	cp pref/* $(PREF)
-	dpkg -b $(DEB_NAME)
-	rm -rf $(DEB_NAME)

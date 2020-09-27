@@ -14,3 +14,4 @@
 # deb packages
 **/*.deb
 **/zhao/package/
+**/zhao/packages/

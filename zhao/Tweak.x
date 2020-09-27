@@ -5,8 +5,9 @@ static NSString *updateIdentifier = @"zhao.updated";
 static vm_address_t addOne = 0;
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-	BOOL score = [[[NSMutableDictionary dictionaryWithContentsOfFile:PLIST_PATH] objectForKey:@"score"] boolValue];
-	NSLog(@"Score is %d", score);
+	NSMutableDictionary *pref = [NSMutableDictionary dictionaryWithContentsOfFile:PLIST_PATH];
+    BOOL score = [[pref objectForKey:@"score"] boolValue];
+    NSLog(@"%@", [pref descriptionInStringsFileFormat]);
 	if (score) {
 		vm_writeData("2A9D0FB1", addOne);
 	} else {

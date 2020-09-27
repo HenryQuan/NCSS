@@ -5,23 +5,29 @@
 static NSString *updateIdentifier = @"zhao.updated";
 static vm_address_t addOne = 0;
 
-static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-    CFPreferencesAppSynchronize(CFSTR(APP_ID));
-    NSMutableDictionary *pref = [NSMutableDictionary dictionaryWithContentsOfFile:PLIST_PATH];
-    BOOL score = [[pref objectForKey:@"score"] boolValue];
-    NSLog(@"score is %d", score);
-	if (score) {
+static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo)
+{
+	CFPreferencesAppSynchronize(CFSTR(APP_ID));
+	NSMutableDictionary *pref = [NSMutableDictionary dictionaryWithContentsOfFile:PLIST_PATH];
+	BOOL score = [[pref objectForKey:@"score"] boolValue];
+	NSLog(@"score is %d", score);
+	if (score)
+	{
 		vm_writeData("2A9D0FB1", addOne);
-	} else {
+	}
+	else
+	{
 		vm_writeData("2A0500B1", addOne);
 	}
 }
 
-void addListerner(NSString *identifier) {
+void addListerner(NSString *identifier)
+{
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, notificationCallback, (CFStringRef)identifier, NULL, CFNotificationSuspensionBehaviorCoalesce);
 }
 
-%ctor {
+%ctor
+{
 	// Set variables on start up
 	notificationCallback(NULL, NULL, NULL, NULL, NULL);
 
@@ -30,5 +36,5 @@ void addListerner(NSString *identifier) {
 
 	// Add any personal initializations
 	addOne = vm_searchData("2A0500B1E8779F1AEA2F00F9", [AppTool getBinarySize]);
-    NSLog(@"Address: 0x%lx", addOne);
+	NSLog(@"Address: 0x%lx", addOne);
 }

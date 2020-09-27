@@ -1,5 +1,4 @@
-#import "helper/Tools.h"
-#import "helper/vm_tool.h"
+#import "helper.h"
 
 #define PLIST_PATH @"/var/mobile/Library/Preferences/org.github.henryquan.zhao.plist"
 static NSString *updateIdentifier = @"zhao.updated";
@@ -28,6 +27,6 @@ void addListerner(NSString *identifier) {
 	addListerner(updateIdentifier);
 
 	// Add any personal initializations
-	addOne = vm_searchData("2A0500B1E8779F1AEA2F00F9", [Tools getBinarySize]);
+	addOne = vm_searchData("2A0500B1E8779F1AEA2F00F9", [AppTool getBinarySize]);
     NSLog(@"Address: 0x%lx", addOne);
 }

@@ -4,11 +4,11 @@ vm_address_t addOne = 0;
 BOOL score;
 
 static void reloadPrefs() {
-	// Run after some delay
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 200 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 500), dispatch_get_main_queue(), ^{
 		NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
-
+		NSLog(@"Pref: %@", [pref description]);
 		score = [[pref objectForKey:@"score"] ?: @(NO) boolValue];
+		NSLog(@"Score: %d", score);
 		if (score)
 		{
 			vm_writeData("2A9D0FB1", addOne);
@@ -17,7 +17,7 @@ static void reloadPrefs() {
 		{
 			vm_writeData("2A0500B1", addOne);
 		}
-    });
+	});
 }
 
 %ctor

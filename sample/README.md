@@ -1,0 +1,2 @@
+# Injection
+This is a sample project for memory search and modification. It also makes debugging quite simple because you just need to rerun the project. I think this won't work for emulators so you will need to have a physical device. 

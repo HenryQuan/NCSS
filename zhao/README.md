@@ -16,4 +16,5 @@ ADDS            X10, X9, #1
 ~~~
 `2A0500B1` - `E94B40F92A0500B1E8779F1AEA2F00F9`
 
-The address and the arm code all changed. That's why I couldn't find it.
+# zhao
+The address changes if you add or remove any lines. If you modify the same file, the arm code will be changed completely so currently, it is really limited.

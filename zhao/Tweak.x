@@ -1,7 +1,6 @@
-#import "helper/Tools.h"
-#import "helper/vm_tool.h"
+#import "helper.h"
 
-#define PLIST_PATH @"/var/mobile/Library/Preferences/org.github.henryquan.zhao.plist"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/henryquan.zhao.plist"
 static NSString *updateIdentifier = @"zhao.updated";
 static vm_address_t addOne = 0;
 
@@ -15,9 +14,7 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 }
 
 void addListerner(NSString *identifier) {
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, 
-									notificationCallback, (CFStringRef)identifier, NULL, 
-									CFNotificationSuspensionBehaviorCoalesce);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, notificationCallback, (CFStringRef)identifier, NULL, CFNotificationSuspensionBehaviorCoalesce);
 }
 
 %ctor {
@@ -28,6 +25,6 @@ void addListerner(NSString *identifier) {
 	addListerner(updateIdentifier);
 
 	// Add any personal initializations
-	addOne = vm_searchData("2A0500B1E8779F1AEA2F00F9", [Tools getBinarySize]);
+	addOne = vm_searchData("2A0500B1E8779F1AEA2F00F9", [AppTool getBinarySize]);
     NSLog(@"Address: 0x%lx", addOne);
 }

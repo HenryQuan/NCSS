@@ -18,3 +18,6 @@ ADDS            X10, X9, #1
 
 # zhao
 The address changes if you add or remove any lines. If you modify the same file, the arm code will be changed completely so currently, it is really limited.
+
+## Preference
+Based on the `defaults` field, a plist file is generated in `/var/mobile/Library/Preferences` with the name you input in the `defaults` field. Then, you can read it from there

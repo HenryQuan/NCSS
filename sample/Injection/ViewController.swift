@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     func showVerionAlert() {
         let pref = UserDefaults.standard
         // Get app version
-        let appVersion = Tools.getAppVersion()!
+        let appVersion = AppTool.getAppVersion()!
         let displayed = pref.bool(forKey: appVersion)
         // Show this only once
         if !displayed {

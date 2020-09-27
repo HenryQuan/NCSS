@@ -1,19 +1,13 @@
 #import "helper/Tools.h"
 #import "helper/vm_tool.h"
 
-#define PLIST_PATH @"/Library/PreferenceLoader/Preferences/zhao.plist"
-static NSString * updateIdentifier = @"zhao.updated";
+#define PLIST_PATH @"/var/mobile/Library/Preferences/org.github.henryquan.zhao.plist"
+static NSString *updateIdentifier = @"zhao.updated";
 static vm_address_t addOne = 0;
 
-@interface NSUserDefaults (Tweak_Category)
-- (id)objectForKey:(NSString *)key inDomain:(NSString *)domain;
-- (void)setObject:(id)value forKey:(NSString *)key inDomain:(NSString *)domain;
-@end
-
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-	NSNumber * enabledValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled" inDomain:nsDomainString];
-	BOOL enabled = (enabledValue)? [enabledValue boolValue] : YES;
-	if (enabled) {
+	BOOL score = [[[NSDictionary dictionaryWithContentsOfFile:PLIST_PATH] valueForKey:@"score"] boolValue];
+	if (score) {
 		vm_writeData("2A9D0FB1", addOne);
 	} else {
 		vm_writeData("2A0500B1", addOne);

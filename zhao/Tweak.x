@@ -5,20 +5,18 @@ BOOL score;
 
 static void reloadPrefs() {
 	NSLog(@"Notification received");
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-		NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
-		NSLog(@"Pref: %@", [pref description]);
-		score = [[pref objectForKey:@"score"] ?: @(NO) boolValue];
-		NSLog(@"Score: %d", score);
-		if (score)
-		{
-			vm_writeData("2A9D0FB1", addOne);
-		}
-		else
-		{
-			vm_writeData("2A0500B1", addOne);
-		}
-	});
+	NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
+	NSLog(@"Pref: %@", [pref description]);
+	score = [[pref objectForKey:@"score"] ?: @(NO) boolValue];
+	NSLog(@"Score: %d", score);
+	if (score)
+	{
+		vm_writeData("2A9D0FB1", addOne);
+	}
+	else
+	{
+		vm_writeData("2A0500B1", addOne);
+	}
 }
 
 %ctor

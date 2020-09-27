@@ -9,6 +9,7 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 	NSLog(@"Notification received");
 	NSDictionary *pref = [NSDictionary dictionaryWithContentsOfFile:PLIST_PATH];
 	BOOL enabled = [[pref valueForKey:@"enabled"] boolValue];
+	NSLog(@"Enabled is %d", enabled);
 	if (enabled) {
 		vm_writeData("2A9D0FB1", addOne);
 	} else {

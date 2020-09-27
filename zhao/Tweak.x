@@ -1,13 +1,13 @@
 #import "helper.h"
 
-#define PLIST_PATH @"/var/mobile/Library/Preferences/henryquan.zhao.plist"
+#define APP_ID @"henryquan.zhao"
 static NSString *updateIdentifier = @"zhao.updated";
 static vm_address_t addOne = 0;
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-	NSMutableDictionary *pref = [NSMutableDictionary dictionaryWithContentsOfFile:PLIST_PATH];
-    BOOL score = [[pref objectForKey:@"score"] boolValue];
-    NSLog(@"%@", [pref descriptionInStringsFileFormat]);
+	CFPreferencesAppSynchronize(CFSTR(APP_ID));
+	BOOL score = CFPreferencesCopyAppValue(CFSTR("score"), CFSTR(APP_ID));
+    NSLog(@"score is %d", score);
 	if (score) {
 		vm_writeData("2A9D0FB1", addOne);
 	} else {
@@ -16,7 +16,7 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 }
 
 void addListerner(NSString *identifier) {
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, notificationCallback, (CFStringRef)identifier, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, notificationCallback, (CFStringRef)identifier, NULL, CFNotificationSuspensionBehaviorCoalesce);
 }
 
 %ctor {

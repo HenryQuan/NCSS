@@ -26,7 +26,7 @@ move_debug:
 
 # build, package and clean
 final:
-	rm *.deb
+	make
 	rm -rf $(DEB_NAME)
 	mkdir -p $(DEBIAN)
 	mkdir -p $(DYLIB)

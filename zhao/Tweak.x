@@ -1,12 +1,13 @@
 #import "Tweak.h"
 
 vm_address_t addOne = 0;
-BOOL score = false;
+BOOL score;
 
 static void reloadPrefs() {
-	NSDictionary *settings = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
-
-	score = [[settings objectForKey:@"score"] ?: @(NO) boolValue];
+	NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
+	NSLog(@"Pref: %@", [pref description]);
+	score = [[pref objectForKey:@"score"] ?: @(NO) boolValue];
+	NSLog(@"Score: %d", score);
   	if (score)
 	{
 		vm_writeData("2A9D0FB1", addOne);

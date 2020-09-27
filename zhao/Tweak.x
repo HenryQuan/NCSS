@@ -5,7 +5,7 @@ BOOL score;
 
 static void reloadPrefs() {
 	NSLog(@"Notification received");
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1000), dispatch_get_main_queue(), ^{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)NSEC_PER_SEC), dispatch_get_main_queue(), ^{
 		NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
 		NSLog(@"Pref: %@", [pref description]);
 		score = [[pref objectForKey:@"score"] ?: @(NO) boolValue];

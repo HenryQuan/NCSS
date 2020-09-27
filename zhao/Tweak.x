@@ -12,9 +12,10 @@ static vm_address_t addOne = 0;
 static BOOL enabled;
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
+	NSLog(@"Notification received");
 	NSNumber * enabledValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled" inDomain:nsDomainString];
 	enabled = (enabledValue) ? [enabledValue boolValue] : YES;
-
+	NSLog(@"Current value: %d", enabledValue);
 	if (enabled) {
 		vm_writeData("2A9D0FB1", addOne);
 	} else {

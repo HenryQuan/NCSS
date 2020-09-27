@@ -1,6 +1,6 @@
 #import "helper.h"
 
-#define PLIST_PATH @"/var/mobile/Library/Preferences/org.github.henryquan.zhao.plist"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/henryquan.zhao.plist"
 static NSString *updateIdentifier = @"zhao.updated";
 static vm_address_t addOne = 0;
 
@@ -14,9 +14,7 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 }
 
 void addListerner(NSString *identifier) {
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, 
-									notificationCallback, (CFStringRef)identifier, NULL, 
-									CFNotificationSuspensionBehaviorCoalesce);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, notificationCallback, (CFStringRef)identifier, NULL, CFNotificationSuspensionBehaviorCoalesce);
 }
 
 %ctor {

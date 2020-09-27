@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Injection : NSObject
 
 +(void)inject;
++(void)loadPref;
 
 @end
 

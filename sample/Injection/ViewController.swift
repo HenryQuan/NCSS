@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         showVerionAlert()
         valueLabel.text = "\(defaultValue())"
-        onTapMeButtonPressed(self)
     }
     
     func showVerionAlert() {

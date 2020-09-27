@@ -15,7 +15,7 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 	NSLog(@"Notification received");
 	NSNumber * enabledValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled" inDomain:nsDomainString];
 	enabled = (enabledValue) ? [enabledValue boolValue] : YES;
-	NSLog(@"Current value: %d", enabledValue);
+	NSLog(@"Current value: %@", enabledValue);
 	if (enabled) {
 		vm_writeData("2A9D0FB1", addOne);
 	} else {

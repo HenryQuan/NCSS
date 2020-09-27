@@ -4,8 +4,6 @@
 <dict>
 	<key>entry</key>
 	<dict>
-		<key>PostNotification</key>
-		<string>zhao.updated</string>
 		<key>cell</key>
 		<string>PSLinkCell</string>
 		<key>icon</key>
@@ -26,6 +24,8 @@
 			<string>fall</string>
 			<key>label</key>
 			<string>More score</string>
+			<key>PostNotification</key>
+			<string>zhao.updated</string>
 		</dict>
 		<dict>
 			<key>cell</key>

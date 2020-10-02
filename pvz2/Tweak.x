@@ -14,5 +14,6 @@ static void reloadPrefs() {
 
 	// Find addresses and record original value
 	cooldown = vm_searchData("F40300AAE10313AAE2070032", [AppTool getBinarySize]) + 8;
+	NSLog(@"Cooldown - 0x%lx", cooldown);
 	vm_writeData("E803271E", cooldown);
 }

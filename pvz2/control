@@ -1,0 +1,9 @@
+Package: org.github.henryquan.pvz2
+Name: PvZ 2 mod
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Mod for Plants vs. Zombies 2
+Maintainer: HenryQuan
+Author: HenryQuan
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)

@@ -1,7 +1,8 @@
-# 找 zhao
+# NCSS 内存搜索
 Search/Write a value from/to the virtual memory on iOS.
 - [sample](https://github.com/HenryQuan/zhao/tree/master/sample), a simple app for research purposes
 - [zhao](https://github.com/HenryQuan/zhao/tree/master/zhao), the tweak
+- [pvz2](https://github.com/HenryQuan/zhao/tree/master/pvz2), experimenting with pvz2
 
 ## Reference
 - vm_writeData.h by Razzile & HackJack

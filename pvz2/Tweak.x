@@ -4,7 +4,7 @@ vm_address_t cooldown = 0;
 BOOL score;
 
 static void reloadPrefs() {
-	NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
+	// NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
 }
 
 %ctor

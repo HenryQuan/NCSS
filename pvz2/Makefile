@@ -10,3 +10,5 @@ pvz2_FILES = Tweak.x ../zhao/helper/app_tool.m
 pvz2_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+SUBPROJECTS += pvz2mod
+include $(THEOS_MAKE_PATH)/aggregate.mk

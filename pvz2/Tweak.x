@@ -12,8 +12,8 @@ static void reloadPrefs() {
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)reloadPrefs, CFSTR(PREF_CHANGED), NULL, CFNotificationSuspensionBehaviorCoalesce);
 	reloadPrefs();
 
-	// Find addresses and record original value
-	cooldown = vm_searchData("F40300AAE10313AAE2070032", [AppTool getBinarySize]) + 8;
+	// 4 * 4 means 4 instructions later so it is the offset
+	cooldown = vm_searchData("F30300AA0200801203008052", [AppTool getBinarySize]) + 4 * 4;
 	NSLog(@"Cooldown - 0x%lx", cooldown);
 	vm_writeData("E803271E", cooldown);
 }

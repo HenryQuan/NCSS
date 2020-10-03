@@ -8,3 +8,5 @@ It was almost instant because the search is linear and returns early when the ad
 
 ## How to counter version update
 My current strategy is based on a fixed hex string but this can be easily changed in a new version so I might need something else.
+
+The instructions are the same but hex is somehow different?

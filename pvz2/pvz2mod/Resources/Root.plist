@@ -8,22 +8,87 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>pvz2mod First Page</string>
+			<string>Plants</string>
+		</dict>
+			<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>org.github.henryquan.pvz2</string>
+			<key>key</key>
+			<string>free_plant</string>
+			<key>label</key>
+			<string>Free plants</string>
+			<key>PostNotification</key>
+        	<string>org.github.henryquan.pvz2/PrefChanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
-			<true/>
+			<false/>
 			<key>defaults</key>
 			<string>org.github.henryquan.pvz2</string>
 			<key>key</key>
-			<string>AwesomeSwitch1</string>
+			<string>no_cooldown</string>
 			<key>label</key>
-			<string>Awesome Switch 1</string>
+			<string>No cooldown</string>
+			<key>PostNotification</key>
+        	<string>org.github.henryquan.pvz2/PrefChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>org.github.henryquan.pvz2</string>
+			<key>key</key>
+			<string>plant_op</string>
+			<key>label</key>
+			<string>Invincible plants</string>
+			<key>PostNotification</key>
+        	<string>org.github.henryquan.pvz2/PrefChanged</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Extras</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>org.github.henryquan.pvz2</string>
+			<key>key</key>
+			<string>max_sun</string>
+			<key>label</key>
+			<string>Max sun</string>
+			<key>PostNotification</key>
+        	<string>org.github.henryquan.pvz2/PrefChanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>org.github.henryquan.pvz2</string>
+			<key>key</key>
+			<string>infinite_time</string>
+			<key>label</key>
+			<string>Inifite time for coin skills</string>
+			<key>PostNotification</key>
+        	<string>org.github.henryquan.pvz2/PrefChanged</string>
 		</dict>
 	</array>
 	<key>title</key>
-	<string>pvz2mod</string>
+	<string>Plants vs. Zombies 2 Mod</string>
 </dict>
 </plist>

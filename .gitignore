@@ -2,7 +2,7 @@
 **/.DS_Store
 
 # Xcode
-**/UserInterfaceState.xcuserstate
+**/*.xcuserstate
 **/*.xcbkptlist
 
 # theos obj files

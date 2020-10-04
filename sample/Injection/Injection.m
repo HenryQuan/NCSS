@@ -34,7 +34,7 @@
     };
     vm_searchData((Module *)&a, size, [AppTool getBinarySize]);
     Module one = a[1];
-    vm_writeData(a[1], true);
+    vm_writeData(one, true);
 }
 
 @end

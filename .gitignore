@@ -1,6 +1,10 @@
 # mac files
 **/.DS_Store
 
+# Xcode
+**/UserInterfaceState.xcuserstate
+**/*.xcbkptlist
+
 # theos obj files
 **/.theos
 **/*.dylib

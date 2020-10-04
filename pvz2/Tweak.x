@@ -10,9 +10,9 @@ Module modules[size] = {
 	// op plant
 	{0, "", "617E40BD2038201E607E00BD", "2040201E", 4},
 	// max sun
-	{0, "", "888641B90801130B1F00086B", "E003082A", 8},
+	{0, "", "888641B90801130B1F00086B", "E803002A", 8},
 	// infinite time for coin skills
-	{0, "", "002840BD611E40BD2038201E", "2040201E", 0},
+	{0, "", "002840BD611E40BD2038201E", "0090241E", 0},
 };
 
 // Preference keys, the order MUST match with the module list

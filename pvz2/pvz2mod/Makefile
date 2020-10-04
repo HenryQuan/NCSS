@@ -1,5 +1,5 @@
 TARGET := iphone:clang:latest:7.0
-
+ARCHS = arm64
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = pvz2mod

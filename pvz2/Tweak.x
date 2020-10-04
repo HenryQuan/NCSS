@@ -1,42 +1,49 @@
 #import "Tweak.h"
 
-// All addresses
-vm_address_t freePlant = 0;
-vm_address_t cooldown = 0;
-vm_address_t invisiblePlant = 0;
-vm_address_t infiniteTime = 0;
-vm_address_t maxSun = 0;
+// Module list and the size of it
+const int size = 5;
+Module modules[size] = {
+	// free plant
+	{0, "", "888641B91501134B958601B9", "F503082A", 4},
+	// no cooldown
+	{0, "", "F30300AA0200801203008052", "E803271E", 16},
+	// op plant
+	{0, "", "617E40BD2038201E607E00BD", "2040201E", 4},
+	// max sun
+	{0, "", "888641B90801130B1F00086B", "E003082A", 8},
+	// infinite time for coin skills
+	{0, "", "002840BD611E40BD2038201E", "2040201E", 0},
+};
 
-// All perferences
-BOOL free_plant;
-BOOL no_cooldown;
-BOOL plant_op;
-BOOL max_sun;
-BOOL infinite_time;
+// Preference keys, the order MUST match with the module list
+NSString *keys[size] = {
+	@"free_plant",
+	@"no_cooldown",
+	@"plant_op",
+	@"max_sun",
+	@"infinite_time",
+};
 
-static void reloadPrefs() {
-	NSLog(@"Notification received");
+static void reloadPrefs()
+{
+	NSLog(@"Notification received from preference");
 	NSDictionary *pref = [[NSMutableDictionary alloc] initWithContentsOfFile:@PLIST_PATH] ?: [@{} mutableCopy];
-	NSLog(@"Pref: %@", [pref description]);
-	score = [[pref objectForKey:@"score"] ?: @(NO) boolValue];
-	NSLog(@"Score: %d", score);
-	if (score)
+	for (int i = 0; i < size; i++)
 	{
-		vm_writeData("2A9D0FB1", addOne);
+		BOOL value = [[pref objectForKey:keys[i]] ?: @(NO) boolValue];
+		vm_writeData(modules[i], value);
 	}
-	else
-	{
-		vm_writeData("2A0500B1", addOne);
-	}
+	NSLog(@"Complete reloading");
 }
 
 %ctor
 {
+	NSLog(@"Searching begins...");
+	// Find everything
+	vm_searchData(modules, size, [AppTool getBinarySize]);
+	NSLog(@"Searching completed!");
+
+	// Setup notification
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)reloadPrefs, CFSTR(PREF_CHANGED), NULL, CFNotificationSuspensionBehaviorCoalesce);
 	reloadPrefs();
-
-	// 4 * 4 means 4 instructions later so it is the offset
-	cooldown = vm_searchData("F30300AA0200801203008052", [AppTool getBinarySize]) + 4 * 4;
-	NSLog(@"Cooldown - 0x%lx", cooldown);
-	vm_writeData("E803271E", cooldown);
 }

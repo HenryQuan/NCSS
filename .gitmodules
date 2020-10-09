@@ -1,0 +1,3 @@
+[submodule "vm_tools"]
+	path = vm_tools
+	url = git@github.com:HenryQuan/vm_tools.git

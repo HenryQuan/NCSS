@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		922CBA7725206EDC0089491E /* app_tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 922CBA7625206EDC0089491E /* app_tool.m */; };
 		922CBA7F25206FE70089491E /* Injection.m in Sources */ = {isa = PBXBuildFile; fileRef = 922CBA7D25206FE70089491E /* Injection.m */; };
-		923C6F85251EFDBC0067503F /* helper in Resources */ = {isa = PBXBuildFile; fileRef = 923C6F84251EFDBC0067503F /* helper */; };
+		929B6F8725303FD4003438FF /* app_tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B6F8425303FD4003438FF /* app_tool.m */; };
 		92E398D2251DD48B001D9BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D1251DD48B001D9BC0 /* AppDelegate.swift */; };
 		92E398D4251DD48B001D9BC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D3251DD48B001D9BC0 /* SceneDelegate.swift */; };
 		92E398D6251DD48B001D9BC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D5251DD48B001D9BC0 /* ViewController.swift */; };
@@ -19,11 +18,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		922CBA7625206EDC0089491E /* app_tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = app_tool.m; path = ../zhao/helper/app_tool.m; sourceTree = "<group>"; };
 		922CBA7D25206FE70089491E /* Injection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Injection.m; sourceTree = "<group>"; };
 		922CBA7E25206FE70089491E /* Injection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Injection.h; sourceTree = "<group>"; };
 		923C6F68251EF4650067503F /* Injection-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Injection-Bridging-Header.h"; sourceTree = "<group>"; };
-		923C6F84251EFDBC0067503F /* helper */ = {isa = PBXFileReference; lastKnownFileType = folder; name = helper; path = ../../zhao/helper; sourceTree = "<group>"; };
+		929B6F8425303FD4003438FF /* app_tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = app_tool.m; path = ../vm_tools/app_tool.m; sourceTree = "<group>"; };
+		929B6F8525303FD4003438FF /* app_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = app_tool.h; path = ../vm_tools/app_tool.h; sourceTree = "<group>"; };
+		929B6F8625303FD4003438FF /* vm_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vm_tool.h; path = ../vm_tools/vm_tool.h; sourceTree = "<group>"; };
 		92E398CE251DD48B001D9BC0 /* Injection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Injection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E398D1251DD48B001D9BC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E398D3251DD48B001D9BC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,9 @@
 		92E398C5251DD48B001D9BC0 = {
 			isa = PBXGroup;
 			children = (
-				922CBA7625206EDC0089491E /* app_tool.m */,
+				929B6F8525303FD4003438FF /* app_tool.h */,
+				929B6F8425303FD4003438FF /* app_tool.m */,
+				929B6F8625303FD4003438FF /* vm_tool.h */,
 				92E398D0251DD48B001D9BC0 /* Injection */,
 				92E398CF251DD48B001D9BC0 /* Products */,
 			);
@@ -65,7 +67,6 @@
 		92E398D0251DD48B001D9BC0 /* Injection */ = {
 			isa = PBXGroup;
 			children = (
-				923C6F84251EFDBC0067503F /* helper */,
 				922CBA7E25206FE70089491E /* Injection.h */,
 				922CBA7D25206FE70089491E /* Injection.m */,
 				92E398D1251DD48B001D9BC0 /* AppDelegate.swift */,
@@ -140,7 +141,6 @@
 			files = (
 				92E398DE251DD48C001D9BC0 /* LaunchScreen.storyboard in Resources */,
 				92E398DB251DD48C001D9BC0 /* Assets.xcassets in Resources */,
-				923C6F85251EFDBC0067503F /* helper in Resources */,
 				92E398D9251DD48B001D9BC0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,9 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				922CBA7F25206FE70089491E /* Injection.m in Sources */,
-				922CBA7725206EDC0089491E /* app_tool.m in Sources */,
 				92E398D6251DD48B001D9BC0 /* ViewController.swift in Sources */,
 				92E398D2251DD48B001D9BC0 /* AppDelegate.swift in Sources */,
+				929B6F8725303FD4003438FF /* app_tool.m in Sources */,
 				92E398D4251DD48B001D9BC0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

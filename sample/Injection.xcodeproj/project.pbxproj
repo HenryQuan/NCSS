@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		922CBA7F25206FE70089491E /* Injection.m in Sources */ = {isa = PBXBuildFile; fileRef = 922CBA7D25206FE70089491E /* Injection.m */; };
-		929B6F8725303FD4003438FF /* app_tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B6F8425303FD4003438FF /* app_tool.m */; };
+		9251354B253174D200885D25 /* app_tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9251354A253174CD00885D25 /* app_tool.m */; };
 		92E398D2251DD48B001D9BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D1251DD48B001D9BC0 /* AppDelegate.swift */; };
 		92E398D4251DD48B001D9BC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D3251DD48B001D9BC0 /* SceneDelegate.swift */; };
 		92E398D6251DD48B001D9BC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E398D5251DD48B001D9BC0 /* ViewController.swift */; };
@@ -21,9 +21,9 @@
 		922CBA7D25206FE70089491E /* Injection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Injection.m; sourceTree = "<group>"; };
 		922CBA7E25206FE70089491E /* Injection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Injection.h; sourceTree = "<group>"; };
 		923C6F68251EF4650067503F /* Injection-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Injection-Bridging-Header.h"; sourceTree = "<group>"; };
-		929B6F8425303FD4003438FF /* app_tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = app_tool.m; path = ../vm_tools/app_tool.m; sourceTree = "<group>"; };
-		929B6F8525303FD4003438FF /* app_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = app_tool.h; path = ../vm_tools/app_tool.h; sourceTree = "<group>"; };
-		929B6F8625303FD4003438FF /* vm_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vm_tool.h; path = ../vm_tools/vm_tool.h; sourceTree = "<group>"; };
+		92513547253174AF00885D25 /* vm_tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = vm_tool.h; path = ../../vm_tools/vm_tool.h; sourceTree = "<group>"; };
+		92513549253174CD00885D25 /* app_tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = app_tool.h; path = ../../vm_tools/app_tool.h; sourceTree = "<group>"; };
+		9251354A253174CD00885D25 /* app_tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = app_tool.m; path = ../../vm_tools/app_tool.m; sourceTree = "<group>"; };
 		92E398CE251DD48B001D9BC0 /* Injection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Injection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E398D1251DD48B001D9BC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E398D3251DD48B001D9BC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,9 +48,9 @@
 		92E398C5251DD48B001D9BC0 = {
 			isa = PBXGroup;
 			children = (
-				929B6F8525303FD4003438FF /* app_tool.h */,
-				929B6F8425303FD4003438FF /* app_tool.m */,
-				929B6F8625303FD4003438FF /* vm_tool.h */,
+				92513547253174AF00885D25 /* vm_tool.h */,
+				92513549253174CD00885D25 /* app_tool.h */,
+				9251354A253174CD00885D25 /* app_tool.m */,
 				92E398D0251DD48B001D9BC0 /* Injection */,
 				92E398CF251DD48B001D9BC0 /* Products */,
 			);
@@ -152,10 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9251354B253174D200885D25 /* app_tool.m in Sources */,
 				922CBA7F25206FE70089491E /* Injection.m in Sources */,
 				92E398D6251DD48B001D9BC0 /* ViewController.swift in Sources */,
 				92E398D2251DD48B001D9BC0 /* AppDelegate.swift in Sources */,
-				929B6F8725303FD4003438FF /* app_tool.m in Sources */,
 				92E398D4251DD48B001D9BC0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

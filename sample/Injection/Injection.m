@@ -32,10 +32,12 @@
         { 0, "", "EACD", "5321", 0 },
         { 0, "", "EACD", "1234", 0 },
     };
-    // vm_searchData((Module *)&a, size, [AppTool getBinarySize]);
+    
+    vm_searchData((Module *)&a, size, [AppTool getBinarySize]);
     vm_readData((Module *)&a, size);
     Module one = a[0];
     vm_writeData(one, true);
+    vm_writeData(one, false);
 }
 
 @end

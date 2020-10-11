@@ -6,7 +6,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = pvz2
 
-pvz2_FILES = Tweak.x ../zhao/helper/app_tool.m
+pvz2_FILES = Tweak.x ../vm_tools/app_tool.m
 pvz2_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk

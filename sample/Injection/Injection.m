@@ -26,14 +26,15 @@
 {
     const int size = 5;
     Module a[size] = {
-        { 0, "", "EACD", 0 },
+        { 0x100008a8c, "", "2A0500B1E8779F1AEA2F00F9", "2A9D0FB1",  0 },
         { 0, "", "2A0500B1E8779F1AEA2F00F9", "2A9D0FB1", 0 },
         { 0, "", "EACD", "1234", 0 },
         { 0, "", "EACD", "5321", 0 },
         { 0, "", "EACD", "1234", 0 },
     };
-    vm_searchData((Module *)&a, size, [AppTool getBinarySize]);
-    Module one = a[1];
+    // vm_searchData((Module *)&a, size, [AppTool getBinarySize]);
+    vm_readData((Module *)&a, size);
+    Module one = a[0];
     vm_writeData(one, true);
 }
 

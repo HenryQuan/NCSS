@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         showVerionAlert()
         valueLabel.text = "\(defaultValue())"
-        Injection.inject()
+        Injection.test()
     }
     
     func showVerionAlert() {

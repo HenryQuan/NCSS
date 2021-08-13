@@ -11,7 +11,7 @@
 
 +(void)inject
 {
-//    vm_address_t address = vm_searchData("2A0500B1E8779F1AEA2F00F9", [AppTool getBinarySize]);
+//    vm_address_t address = vm_searchDataEx("2A0500B1E8779F1AEA2F00F9");
 //    vm_writeData("2A9D0FB1", address);
 }
 
@@ -37,6 +37,8 @@
     vm_readData((Module *)&a, size);
     Module one = a[0];
     vm_writeData(one, true);
+    Module two = a[1];
+    vm_writeData(two, true);
 //    vm_writeData(one, false);
 }
 

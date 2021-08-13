@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../../zhao/Tweak.h"
+#import "../../vm_tools/vm_tool.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

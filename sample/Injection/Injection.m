@@ -17,9 +17,9 @@
 
 +(void)loadPref
 {
-    NSDictionary *pref = [NSDictionary dictionaryWithContentsOfFile:@PLIST_PATH];
-    BOOL score = [[pref valueForKey:@"enabled"] boolValue];
-    NSLog(@"Score is %d", score);
+//    NSDictionary *pref = [NSDictionary dictionaryWithContentsOfFile:@PLIST_PATH];
+//    BOOL score = [[pref valueForKey:@"enabled"] boolValue];
+//    NSLog(@"Score is %d", score);
 }
 
 +(void)test
@@ -33,7 +33,7 @@
         { 0, "", "EACD", "1234", 0 },
     };
     
-    vm_searchData((Module *)&a, size, [AppTool getBinarySize]);
+    vm_searchDataEx((Module *)&a, size);
     vm_readData((Module *)&a, size);
     Module one = a[0];
     vm_writeData(one, true);
